@@ -24,3 +24,8 @@ $(CONFIG_MACH_MT6739) $(CONFIG_MACH_MT6833) $(CONFIG_MACH_MT6893) $(CONFIG_MACH_
 $(CONFIG_MACH_MT6853) $(CONFIG_MACH_MT6873)))
 	ccflags-y += -DADAPT_CHARGER_V1
 endif
+
+#prize add by zhaopengge 20211215 start-----	
+obj-$(CONFIG_TCPC_WUSB3801)		+= tcpc_wusb3801.o
+#prize add by zhaopengge 20211215 end-----	
+

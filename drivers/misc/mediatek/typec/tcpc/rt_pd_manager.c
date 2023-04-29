@@ -546,8 +546,17 @@ static int tcpc_typec_port_type_set(const struct typec_capability *cap,
 			return 0;
 		break;
 	case TYPEC_PORT_SRC:
+		/*prize LiuYong, Add usb state switching code in SRC mode, 20211122*/
 		if (!as_sink)
 			return 0;
+		else {
+			if (cap->prefer_role == TYPEC_SOURCE)
+				typec_role = TYPEC_ROLE_TRY_SNK;
+			else if (cap->prefer_role == TYPEC_SINK)
+				return 0;
+			return tcpm_typec_change_role(rpmd->tcpc, typec_role);
+		}
+		/*prize LiuYong, Add usb state switching code in SRC mode, 20211122*/
 		break;
 	case TYPEC_PORT_DRP:
 		if (cap->prefer_role == TYPEC_SOURCE)

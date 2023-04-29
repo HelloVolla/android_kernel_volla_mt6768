@@ -199,3 +199,21 @@ obj-$(CONFIG_MTK_MDDP_SUPPORT) += mddp/
 obj-$(CONFIG_MTK_GATE_IC) += gate_ic/
 obj-$(CONFIG_MTK_FREQ_HOPPING) += freqhopping/
 obj-$(CONFIG_MTK_TASK_TURBO) += task_turbo/
+
+#prize add by zhaopengge 20201113------start
+obj-$(CONFIG_PRIZE_HARDWARE_INFO) += hardware_info/
+#prize add by zhaopengge 20201113------end
+#/*prize add by zhuzhengjiang for sham dual camera  20201208 start*/
+obj-$(CONFIG_PRIZE_DUAL_CAMERA_ENABLE) += prize_dual_camera/
+#/*prize add by zhuzhengjiang for sham dual camera  20201208 end*/
+
+#prize-add prize-zhaopengge-20200827-start
+obj-$(CONFIG_PRIZE_AW9203) += aw9203/
+obj-$(CONFIG_PRIZE_DUAL_HALL_AS1800) += hall_as1800/
+obj-$(CONFIG_PRIZE_BASE_CHARGER) += base_charger/
+#prize-add prize-zhaopengge-20200827-end
+
+#prize add by wangyongsheng 20210104------start
+obj-$(CONFIG_PRIZE_UHF) += uhf/
+#prize add by wangyongsheng 20210104------end
+

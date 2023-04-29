@@ -57,9 +57,9 @@ int emi_bound_table[HRT_BOUND_NUM][HRT_LEVEL_NUM] = {
 #else
 int emi_bound_table[HRT_BOUND_NUM][HRT_LEVEL_NUM] = {
 	/* HRT_BOUND_TYPE_LP4 */
-	{350, 600, 700, 700},
+	{180, 600, 700, 700},
 	/* HRT_BOUND_TYPE_LP4_PLUS */
-	{300, 500, 600, 600},
+	{180, 500, 600, 600},
 	/* HRT_BOUND_TYPE_LP3 */
 	{350, 350, 350, 350},
 	/* HRT_BOUND_TYPE_LP3_PLUS */
