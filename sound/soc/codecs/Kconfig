@@ -1448,4 +1448,66 @@ config SND_SOC_SMARTPAINFO
 
 source "sound/soc/codecs/cs35l43/Kconfig"
 
+#prize-add smartpa aw883xx-pengzhipeng-20211206-start
+config SND_SMARTPA_AW883XX
+    tristate "SoC Audio for awinic aw883xx series"
+    depends on I2C
+    help
+      This option enables support for aw883xx series Smart PA.
+#prize-add smartpa aw883xx-pengzhipeng-20211206-end
+
+# prize add by anhengxuan, add HAC, 20220406 begin
+config MTK_HAC_SUPPORT
+        tristate "HAC for awinic aw881xx series"
+        default n
+        help
+          This option enables support for HAC.
+# prize add by anhengxuan, add HAC, 20220406 end
+
+#add by prize anhengxuan for AW87XXX 20220402 start
+config SND_SOC_AW87XXX
+        tristate "SoC Audio for awinic AW87XXX series"
+        depends on I2C
+        default n
+        help
+          This option enables support for AW87XXX series Smart PA.
+#add by prize anhengxuan for AW87XXX 20220402 end		
+#prize add by lipengpeng 20210330 start
+config SND_SMARTPA_AW881XX_V2
+        tristate "SoC Audio for awinic aw881a series"
+        depends on I2C
+        default n
+        help
+          This option enables support for aw881xx series Smart PA.
+
+
+
+config SND_SOC_AW881XX_STEREO
+        tristate "SoC Audio for awinic aw881xx series"
+        default n
+        help
+          This option enables support for aw881xx series Smart PA.
+	  
+config SND_SMARTPA_AW88194A
+        tristate "SoC Audio for awinic aw881xx series"
+        depends on I2C
+        default n
+        help
+          This option enables support for aw881xx series Smart PA.
+	  
+config SND_SMARTPA_AW88194A_NEW
+        tristate "SoC Audio for awinic aw881a series"
+        depends on I2C
+        default n
+        help
+          This option enables support for aw881xx series Smart PA.
+
+config SND_SOC_AW8898
+        tristate "SoC Audio for awinic aw8898 series"
+        depends on I2C
+        default n
+        help
+          This option enables support for aw8898 series Smart PA.
+	  	  	  	  	   
+#prize add by lipengpeng 20210330 end
 endmenu

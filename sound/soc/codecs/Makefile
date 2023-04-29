@@ -561,3 +561,20 @@ ifneq (, $(filter y,$(CONFIG_SND_SOC_MT6358) $(CONFIG_SND_SOC_MT6366)))
   subdir-ccflags-y += -Werror -I$(srctree)/drivers/misc/mediatek/include/mt-plat/$(MTK_PLATFORM)/include
   subdir-ccflags-y += -Werror -I$(srctree)/drivers/misc/mediatek/accdet/mt6358
 endif
+#prize-add smartpa aw883xx-pengzhipeng-20211206-start
+obj-$(CONFIG_SND_SMARTPA_AW883XX)    += aw883xx/
+#prize-add smartpa aw883xx-pengzhipeng-20211206-end
+#prize add by anhengxuan for HAC gpio driver 20220406 start
+obj-$(CONFIG_MTK_HAC_SUPPORT)	+= hac_gpio.o
+#prize add by anhengxuan for HAC gpio driver 20220406 end
+#prize-add smartpa aw87xxx-anhengxuan-20220402-start
+obj-$(CONFIG_SND_SOC_AW87XXX)	+= aw87xxx/
+#prize-add smartpa aw87xxx-anhengxuan-20220402-end
+
+#prize add by lipengpeng 20210330 start 
+obj-$(CONFIG_SND_SMARTPA_AW881XX_V2)    += aw881xx_v2/
+obj-$(CONFIG_SND_SMARTPA_AW881XX)    += aw881xx/
+obj-$(CONFIG_SND_SOC_AW8898)    += aw8898/
+obj-$(CONFIG_SND_SMARTPA_AW88194A_NEW)    += aw88194a/
+#prize add by lipengpeng 20210330 end 
+
