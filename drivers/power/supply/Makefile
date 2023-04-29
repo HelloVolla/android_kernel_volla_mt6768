@@ -45,6 +45,20 @@ obj-$(CONFIG_MTK_PUMP_EXPRESS_PLUS_20_SUPPORT) += mtk_pe2.o mtk_pe2_hal.o
 obj-$(CONFIG_MTK_PUMP_EXPRESS_PLUS_SUPPORT) += mtk_pe.o mtk_pe_hal.o
 obj-$(CONFIG_MTK_PUMP_EXPRESS_40_SUPPORT) += mtk_pe4.o mtk_pe4_hal.o
 obj-$(CONFIG_CHARGER_MT6357) += mt6357-pulse-charger.o
+
+obj-$(CONFIG_MTK_CW2015_SUPPORT) += cw2015_fuel_gauge_v3.4.o
+#prize add by zhaopengge 20211215 start-----	
+obj-$(CONFIG_CHARGER_SGM41512) += sgm41512.o
+#prize add by zhaopengge 20211215 end-----	
+# prize add by zhaopengge----20201030---start
+obj-$(CONFIG_HL7005ALL_CHARGER_SUPPORT) += hl7005all.o
+# prize add by zhaopengge----20201030---end
+#//prize added by sunshuai, charge support, 20200507-start
+obj-$(CONFIG_PRIZE_MT5725_SUPPORT_15W) += mt5725_wireless_driver-15w.o
+#//prize added by sunshuai, charge support, 20200507-end
+# begin, prize-pengzhipeng-20210707, add fuel gauge cw2017
+obj-$(CONFIG_MTK_CW2017_SUPPORT_OF) += cw2017_fuel_gauge_base.o
+# end, prize-pengzhipeng-20210707, add fuel gauge cw2017
 endif
 
 

@@ -473,14 +473,26 @@ static int pd_tcp_notifier_call(struct notifier_block *pnb,
 		if (noti->typec_state.old_state == TYPEC_UNATTACHED &&
 		    (noti->typec_state.new_state == TYPEC_ATTACHED_SNK ||
 		    noti->typec_state.new_state == TYPEC_ATTACHED_CUSTOM_SRC ||
-		    noti->typec_state.new_state == TYPEC_ATTACHED_NORP_SRC)) {
+		    noti->typec_state.new_state == TYPEC_ATTACHED_NORP_SRC
+/*prize add by sunshuai for A-C 30w charge 20201109-start */
+#ifdef CONFIG_PRIZE_ATOC_TYPEC_CHARGE
+		 || noti->typec_state.new_state == TYPEC_ATTACHED_DBGACC_SNK
+#endif
+/*prize add by sunshuai for A-C 30w charge 20201109-start */
+	)) {
 			pr_info("%s USB Plug in, pol = %d\n", __func__,
 					noti->typec_state.polarity);
 			plug_in_out_handler(cti, true, false);
 		} else if ((noti->typec_state.old_state == TYPEC_ATTACHED_SNK ||
 		    noti->typec_state.old_state == TYPEC_ATTACHED_CUSTOM_SRC ||
 		    noti->typec_state.old_state == TYPEC_ATTACHED_NORP_SRC ||
-		    noti->typec_state.old_state == TYPEC_ATTACHED_AUDIO)
+		    noti->typec_state.old_state == TYPEC_ATTACHED_AUDIO
+/*prize add by sunshuai for A-C 30w charge 20201109-start */
+#ifdef CONFIG_PRIZE_ATOC_TYPEC_CHARGE
+		 || noti->typec_state.old_state == TYPEC_ATTACHED_DBGACC_SNK
+#endif
+/*prize add by sunshuai for A-C 30w charge 20201109-start */
+		)
 			&& noti->typec_state.new_state == TYPEC_UNATTACHED) {
 			if (cti->tcpc_kpoc) {
 				vbus = battery_get_vbus();
